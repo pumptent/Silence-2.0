@@ -33,7 +33,7 @@ public class CrowdAnnoy4 : MonoBehaviour {
 	void Update () {
 
 
-	
+		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger4 == N2) {
 				//set color change
@@ -51,7 +51,7 @@ public class CrowdAnnoy4 : MonoBehaviour {
 				//shut = AudioOnoff.sound.Stop();
 
 			}
-
+		}
 
 		}
 		}

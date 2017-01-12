@@ -29,28 +29,29 @@ public class CrowdAnnoy : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown ("a")) {
+			int N2 = AudioOnoff.times;// the timer count
+			if (Anger == N2) {
+				//set color change
 		
-		int N2 = AudioOnoff.times;// the timer count
-		if (Anger == N2) {
-			//set color change
-		
 
-			Renderer rend = GetComponent<Renderer> ();
-			//rend.material.shader = Shader.Find ("Specular");
-			rend.material.SetColor ("_Color", Color.red);
+				Renderer rend = GetComponent<Renderer> ();
+				//rend.material.shader = Shader.Find ("Specular");
+				rend.material.SetColor ("_Color", Color.red);
 
 
-		}
+			}
 			
 
-		if (Anger == 10) {
+			if (Anger == 10) {
 
-			shush.Play ();
+				shush.Play ();
 
 
-			//shut = AudioOnoff.sound.Stop();
+				//shut = AudioOnoff.sound.Stop();
 			}
-
+		}
 
 	}
 		}

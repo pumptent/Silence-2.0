@@ -30,7 +30,7 @@ public class CrowdAnnoy5 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger5 == N2) {
 				//set color change
@@ -49,7 +49,7 @@ public class CrowdAnnoy5 : MonoBehaviour {
 				//shut = AudioOnoff.sound.Stop();
 			}
 
-
+		}
 		}
 		}
 

@@ -32,15 +32,15 @@ public class CrowdAnnoy1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-		int N2 = AudioOnoff.times;// the timer count
-			if(Anger1 == N2) {
+		if (Input.GetKeyDown ("a")) {
+			int N2 = AudioOnoff.times;// the timer count
+			if (Anger1 == N2) {
 				//set color change
 				
 
-			Renderer rend = GetComponent<Renderer>();
-			rend.material.shader = Shader.Find("Specular");
-			rend.material.SetColor("_Color", Color.red);
+				Renderer rend = GetComponent<Renderer> ();
+				rend.material.shader = Shader.Find ("Specular");
+				rend.material.SetColor ("_Color", Color.red);
 
 			}
 
@@ -51,7 +51,7 @@ public class CrowdAnnoy1 : MonoBehaviour {
 				//shut = AudioOnoff.sound.Stop();
 
 			}
-		
+		}
 
 		}
 		}
