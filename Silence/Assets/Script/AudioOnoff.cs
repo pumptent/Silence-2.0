@@ -25,6 +25,8 @@ public class AudioOnoff : MonoBehaviour {
 		if (Input.GetKeyDown ("s")) {
 
 			sound.Stop ();
+
+
 		}
 
 		}

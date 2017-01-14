@@ -4,7 +4,7 @@ using System.Collections;
 public class CrowdAnnoy : MonoBehaviour {
 
 	private int N1;
-	//public GameObject P1;
+	public GameObject Player;
 	public static int Anger;
 	public AudioSource shush;
 
@@ -13,7 +13,8 @@ public class CrowdAnnoy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+
 
 
 		N1 = Random.Range (0, 11);
@@ -30,6 +31,8 @@ public class CrowdAnnoy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+
 		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger == N2) {
@@ -44,15 +47,17 @@ public class CrowdAnnoy : MonoBehaviour {
 			}
 			
 
-			if (Anger == 10) {
+			if (Anger == 10 && sound.isPlaying) {
+
+				sound.Stop ();
 
 				shush.Play ();
 
+					
 
-				//shut = AudioOnoff.sound.Stop();
+				}
 			}
 		}
 
 	}
-		}
 

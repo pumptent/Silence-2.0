@@ -7,7 +7,7 @@ public class CrowdAnnoy1 : MonoBehaviour {
 	//public Renderer rend;
 	//public Renderer rend2;
 	private int N1;
-	//public GameObject P1;
+	public GameObject Player;
 	public static int Anger1;
 	public AudioSource shush;
 
@@ -32,6 +32,9 @@ public class CrowdAnnoy1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+
 		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger1 == N2) {
@@ -44,11 +47,12 @@ public class CrowdAnnoy1 : MonoBehaviour {
 
 			}
 
-			if (Anger1 == 10) {
+			if (Anger1 == 10 && sound.isPlaying) {
 
+
+				sound.Stop ();
 				shush.Play ();
 
-				//shut = AudioOnoff.sound.Stop();
 
 			}
 		}

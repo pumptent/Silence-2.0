@@ -30,6 +30,9 @@ public class CrowdAnnoy5 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+
 		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger5 == N2) {
@@ -42,8 +45,9 @@ public class CrowdAnnoy5 : MonoBehaviour {
 
 			}
 
-			if (Anger5 == 10) {
+			if (Anger5 == 10 && sound.isPlaying) {
 
+				sound.Stop ();
 				shush.Play ();
 
 				//shut = AudioOnoff.sound.Stop();

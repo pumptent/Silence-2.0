@@ -7,7 +7,7 @@ public class CrowdAnnoy3 : MonoBehaviour {
 	//public Renderer rend;
 	//public Renderer rend2;
 	private int N1;
-	//public GameObject P1;
+	public GameObject Player;
 	public static int Anger3;
 	public AudioSource shush;
 
@@ -31,6 +31,9 @@ public class CrowdAnnoy3 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+
 		if (Input.GetKeyDown ("a")) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger3 == N2) {
@@ -42,8 +45,9 @@ public class CrowdAnnoy3 : MonoBehaviour {
 				rend.material.SetColor ("_Color", Color.red);
 
 			}
-			if (Anger3 == 10) {
+			if (Anger3 == 10 && sound.isPlaying) {
 
+				sound.Stop ();
 				shush.Play ();
 
 				//shut = AudioOnoff.sound.Stop();
