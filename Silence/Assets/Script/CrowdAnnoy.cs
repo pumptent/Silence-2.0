@@ -43,6 +43,7 @@ public class CrowdAnnoy : MonoBehaviour {
 				//rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
 
+				//transform.Rotate (0, 80, 0);
 
 			}
 			

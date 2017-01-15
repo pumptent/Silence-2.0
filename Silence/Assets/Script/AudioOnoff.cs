@@ -19,7 +19,7 @@ public class AudioOnoff : MonoBehaviour {
 				 sound.Play ();
 
 				times = Random.Range (1, 16);
-
+			print (times);
 			}
 
 		if (Input.GetKeyDown ("s")) {

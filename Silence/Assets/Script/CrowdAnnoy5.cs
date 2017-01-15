@@ -34,6 +34,7 @@ public class CrowdAnnoy5 : MonoBehaviour {
 		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
 
 		if (Input.GetKeyDown ("a")) {
+			
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger5 == N2) {
 				//set color change
@@ -42,6 +43,8 @@ public class CrowdAnnoy5 : MonoBehaviour {
 				Renderer rend = GetComponent<Renderer> ();
 				rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
+
+
 
 			}
 

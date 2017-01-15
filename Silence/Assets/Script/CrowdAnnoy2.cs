@@ -10,13 +10,12 @@ public class CrowdAnnoy2 : MonoBehaviour {
 	public GameObject Player;
 	public static int Anger2;
 	public AudioSource shush;
+	//public float yRotate = 0;
 
 	//public AudioSource shut;
 
 	// Use this for initialization
 	void Start () {
-		
-
 
 		N1 = Random.Range (0, 11);
 		//P1 = N1;
@@ -27,31 +26,47 @@ public class CrowdAnnoy2 : MonoBehaviour {
 
 		}
 
+	
+		
 	}
 
 	// Update is called once per frame
 	void Update () {
 
+
 		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+		int N2 = AudioOnoff.times;// the timer count
+
+
 		if (Input.GetKeyDown ("a")) {
-			int N2 = AudioOnoff.times;// the timer count
+
 			if (Anger2 == N2) {
 				//set color change
-				
 
 				Renderer rend = GetComponent<Renderer> ();
 				rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
 
-			}
-			if (Anger2 == 10 && sound.isPlaying) {
+				//yRotate = 40;
 
-				sound.Stop ();
-				shush.Play ();
+				transform.Rotate (0, 40, 0);
 
-				//shut = AudioOnoff.sound.Stop();
+				//Anger2 = 0;
 			}
+
 		}
+
+		if (Anger2 == 10 && sound.isPlaying) {
+
+			sound.Stop ();
+			shush.Play ();
+
+	
+		}
+
+
+
+
 		}
 		}
 

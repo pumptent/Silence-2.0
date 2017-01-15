@@ -45,6 +45,9 @@ public class CrowdAnnoy1 : MonoBehaviour {
 				rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
 
+				//transform.Rotate (0, 40, 0);
+
+
 			}
 
 			if (Anger1 == 10 && sound.isPlaying) {
