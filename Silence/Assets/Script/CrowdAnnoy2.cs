@@ -66,14 +66,15 @@ public class CrowdAnnoy2 : MonoBehaviour {
 				//Anger2 = 0;
 			}
 
-		}
+		
 
-		if (Anger2 == 10 && sound.isPlaying) {
+			if (Anger2 == 10 && sound.isPlaying) {
 
-			sound.Stop ();
-			shush.Play ();
+				sound.Stop ();
+				shush.Play ();
 
 	
+			}
 		}
 
 		if (Input.GetKeyDown ("s") && Anger2 == N2) {

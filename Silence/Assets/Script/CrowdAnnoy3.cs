@@ -10,6 +10,7 @@ public class CrowdAnnoy3 : MonoBehaviour {
 	public GameObject Player;
 	public static int Anger3;
 	public AudioSource shush;
+	public Color originalColor ;
 	//public float yRotate = 0f;
 
 	//public AudioSource shut;
@@ -27,6 +28,10 @@ public class CrowdAnnoy3 : MonoBehaviour {
 			Anger3 = Anger3 + N1;
 
 		}
+
+		Renderer rend = GetComponent<Renderer> ();
+		originalColor = rend.material.color;
+
 
 
 	}
@@ -48,28 +53,31 @@ public class CrowdAnnoy3 : MonoBehaviour {
 				rend.material.SetColor ("_Color", Color.red);
 
 			
-				transform.Rotate (0, -85, 0);
+				transform.Rotate (0, 275, 0);
 
 			}
+		
+
+
 			if (Anger3 == 10 && sound.isPlaying) {
 
 				sound.Stop ();
 				shush.Play ();
 
-
-
 			}
-
 		}
 
 
-		//if (Input.GetKeyDown ("s") && Anger3 == N2){
+		if (Input.GetKeyDown ("s") && Anger3 == N2){
 
 			//transform.Rotate(0,-85,0);
+			Renderer rend = GetComponent<Renderer> ();
+			rend.material.color = originalColor;
 
-			//transform.rotation = Quaternion.identity;
+			transform.Rotate (0,85,0);
+			
 
-		//}
+		}
 
 		}
 		}

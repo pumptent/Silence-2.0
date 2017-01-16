@@ -10,6 +10,7 @@ public class CrowdAnnoy4 : MonoBehaviour {
 	public GameObject Player;
 	public static int Anger4;
 	public AudioSource shush;
+	public Color originalColor ;
 
 
 	//public AudioSource shut;
@@ -27,6 +28,9 @@ public class CrowdAnnoy4 : MonoBehaviour {
 			Anger4 = Anger4 + N1;
 
 		}
+
+		Renderer rend = GetComponent<Renderer> ();
+		originalColor = rend.material.color;
 
 
 	}
@@ -51,7 +55,9 @@ public class CrowdAnnoy4 : MonoBehaviour {
 				transform.Rotate (0, 80, 0);
 
 			}
-		if (Anger4 == 10 && sound.isPlaying) {
+		
+
+			if (Anger4 == 10 && sound.isPlaying) {
 
 				sound.Stop ();
 				shush.Play ();
@@ -60,7 +66,18 @@ public class CrowdAnnoy4 : MonoBehaviour {
 			}
 		}
 
-	
+
+		if (Input.GetKeyDown ("s") && Anger4 == N2){
+
+			//transform.Rotate(0,-85,0);
+			Renderer rend = GetComponent<Renderer> ();
+			rend.material.color = originalColor;
+
+			transform.Rotate (0, 280, 0);
+
+
+		}
+			
 
 		}
 		}
