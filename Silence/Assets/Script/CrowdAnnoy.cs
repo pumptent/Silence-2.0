@@ -46,6 +46,7 @@ public class CrowdAnnoy : MonoBehaviour {
 				//transform.Rotate (0, 80, 0);
 
 			}
+
 			
 
 			if (Anger == 10 && sound.isPlaying) {
