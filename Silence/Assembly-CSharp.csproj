@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\Partners.cs" />
      <Compile Include="Assets\Script\PlayerMeter.cs" />
      <Compile Include="Assets\Script\Timer.cs" />
+     <Compile Include="Assets\Script\newPartners.cs" />
      <Compile Include="Assets\Script\playerAndPartnerConversation.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Unity_5_new/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
