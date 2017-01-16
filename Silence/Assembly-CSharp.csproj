@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\AngerTotals.cs" />
+     <Compile Include="Assets\Script\AngryPartners.cs" />
      <Compile Include="Assets\Script\AudioOnoff.cs" />
      <Compile Include="Assets\Script\CrowdAnnoy.cs" />
      <Compile Include="Assets\Script\CrowdAnnoy1.cs" />
