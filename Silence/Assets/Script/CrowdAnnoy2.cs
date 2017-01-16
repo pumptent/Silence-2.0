@@ -9,7 +9,9 @@ public class CrowdAnnoy2 : MonoBehaviour {
 	public static int Anger2;
 	public AudioSource shush;
 	public float yRotate = 40f;
-	public Transform target;
+	public Color originalColor ;
+	//public Transform target;
+
 	//public void LookAt(Transform target, Vector3 worldUp = Vector3.up);
 
 	//public AudioSource shut;
@@ -26,6 +28,8 @@ public class CrowdAnnoy2 : MonoBehaviour {
 
 		}
 
+		Renderer rend = GetComponent<Renderer> ();
+		originalColor = rend.material.color;
 	
 
 	}
@@ -72,6 +76,13 @@ public class CrowdAnnoy2 : MonoBehaviour {
 	
 		}
 
+		if (Input.GetKeyDown ("s") && Anger2 == N2) {
+
+			Renderer rend = GetComponent<Renderer> ();
+			rend.material.color = originalColor;
+
+			transform.Rotate (0,320,0);
+		}
 
 		}
 		}
