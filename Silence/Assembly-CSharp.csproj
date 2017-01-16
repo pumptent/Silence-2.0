@@ -54,6 +54,7 @@
      <Compile Include="Assets\Script\CrowdAnnoy4.cs" />
      <Compile Include="Assets\Script\CrowdAnnoy5.cs" />
      <Compile Include="Assets\Script\LighteningController.cs" />
+     <Compile Include="Assets\Script\Partners.cs" />
      <Compile Include="Assets\Script\PlayerMeter.cs" />
      <Compile Include="Assets\Script\Timer.cs" />
      <Compile Include="Assets\Script\playerAndPartnerConversation.cs" />
