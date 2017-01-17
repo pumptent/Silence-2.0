@@ -2,41 +2,50 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class PlayerMeter : MonoBehaviour {
+public class PlayerMeter : MonoBehaviour
+{
 
-    public int meter;
+    private float meter;
 
-    //Text testIndicator;
+    Text testIndicator;
 
-	// Use this for initialization
-	void Start () {
-        //testIndicator = GetComponent<Text>();
-	}
-	 
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+        testIndicator = GetComponent<Text>();
+        meter = 0;
+    }
 
-        meter = AngerTotals.Total;
+    // Update is called once per frame
+    void Update()
+    {
 
-        if (meter <= 25)
+        meter = CrowdAnnoy.N3 + CrowdAnnoy1.N3 + CrowdAnnoy2.N3 + CrowdAnnoy3.N3 + CrowdAnnoy4.N3 + CrowdAnnoy5.N3;
+
+        if (meter <= 5)
         {
-            testIndicator = "green";
+            //testIndicator.text = "green: " + meter;
+            testIndicator.text = "[ ......................... ]";
         }
-        else if (meter > 25 && meter <= 50)
+        else if (meter > 5 && meter <= 10)
         {
-            testIndicator = "yellow";
+            //testIndicator.text = "yellow" + meter;
+            testIndicator.text = "[ IIIII.................... ]";
         }
-        else if (meter > 50 && meter <= 75)
+        else if (meter > 10 && meter <= 15)
         {
-            testIndicator = "orange";
+            testIndicator.text = "orange" + meter;
+            testIndicator.text = "[ IIIIIIIIII............... ]";
         }
-        else if (meter > 75 && meter <= 100)
+        else if (meter > 15 && meter <= 20)
         {
-            testIndicator = "red";
+            testIndicator.text = "red" + meter;
+            testIndicator.text = "[ IIIIIIIIIIIIIII.......... ]";
         }
-        else if (meter > 100)
+        else if (meter > 20)
         {
-            testIndicator = "dead";
+            testIndicator.text = "dead" + meter;
+            testIndicator.text = "[ IIIIIIIIIIIIIIIIIIII..... ]";
             //Application.LoadLevel(Application.loadedLevel);
         }
     }
