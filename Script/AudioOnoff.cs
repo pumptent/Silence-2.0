@@ -17,14 +17,19 @@ public class AudioOnoff : MonoBehaviour {
 			if (Input.GetKeyDown ("a")) {
 
 				 sound.Play ();
-				 times = Random.Range (1, 16);
 
+				times = Random.Range (1, 16);
+			print (times);
 			}
 
 		if (Input.GetKeyDown ("s")) {
 
 			sound.Stop ();
+
+
 		}
 
-	}
+		}
+	
+
 }
