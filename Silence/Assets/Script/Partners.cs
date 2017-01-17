@@ -7,7 +7,7 @@ public class Partners : MonoBehaviour {
 	public static int times;
 	public AudioSource sound;
 	public AudioSource partnerSound;
-	private int AssignNum;
+	public int AssignNum;
 	public Color originalColor ;
 
 	// Use this for initialization
@@ -52,8 +52,6 @@ public class Partners : MonoBehaviour {
 			partnerSound.Play ();
 		}
 			
-			
-
 
 
 	}
