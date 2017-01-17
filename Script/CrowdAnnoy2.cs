@@ -3,19 +3,13 @@ using System.Collections;
 
 public class CrowdAnnoy2 : MonoBehaviour {
 
-
+	//public Color rcolor = new Color (1, 0, 0);
+	//public Renderer rend;
+	//public Renderer rend2;
 	private int N1;
-    public static float N3;
-    private float coolDown;
-
 	public GameObject Player;
 	public static int Anger2;
 	public AudioSource shush;
-	public float yRotate = 40f;
-	public Color originalColor ;
-	//public Transform target;
-
-	//public void LookAt(Transform target, Vector3 worldUp = Vector3.up);
 
 	//public AudioSource shut;
 
@@ -31,70 +25,27 @@ public class CrowdAnnoy2 : MonoBehaviour {
 
 		}
 
-		Renderer rend = GetComponent<Renderer> ();
-		originalColor = rend.material.color;
-	
-
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-        coolDown -= Time.deltaTime;
-
-        //transform.position = new Vector3 (0, 0, 0);
-        AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
-		int N2 = AudioOnoff.times;// the timer count
-
-
-		if (Input.GetKeyDown ("a") && coolDown <= 0f) {
-
+		if (Input.GetKeyDown ("a")) {
+			int N2 = AudioOnoff.times;// the timer count
 			if (Anger2 == N2) {
-                //set color change
-                N3 = Anger2;
-                coolDown = 10f;
+				//set color change
 
-                Renderer rend = GetComponent<Renderer> ();
+				Renderer rend = GetComponent<Renderer> ();
 				rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
 
-				//transform.LookAt (target);
-				//Vector3 relativePos = target.position - transform.position;
-				//Quaternion rotation = Quaternion.LookRotation(relativePos);
-				//transform.rotation = rotation;
-
-
-				//yRotate = 40;
-
-				transform.Rotate (0, 40, 0);
-
-				//Anger2 = 0;
 			}
+			if (Anger2 == 10) {
 
-		
-
-			if (Anger2 == 10 && sound.isPlaying) {
-
-				sound.Stop ();
 				shush.Play ();
 
-	
+				//shut = AudioOnoff.sound.Stop();
 			}
 		}
-
-		if (Input.GetKeyDown ("s") && Anger2 == N2) {
-
-			Renderer rend = GetComponent<Renderer> ();
-			rend.material.color = originalColor;
-
-			transform.Rotate (0,320,0);
-		}
-
-        if (coolDown <= 0f)
-        {
-            N3 = 0;
-        }
-
-    }
-		}
+	}
+}
 
