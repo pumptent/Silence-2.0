@@ -3,10 +3,12 @@ using System.Collections;
 
 public class CrowdAnnoy3 : MonoBehaviour {
 
-	//public Color rcolor = new Color (1, 0, 0);
-	//public Renderer rend;
-	//public Renderer rend2;
-	private int N1;
+    //public Color rcolor = new Color (1, 0, 0);
+    //public Renderer rend;
+    //public Renderer rend2;
+    private int N1;
+    public static float N3;
+    private float coolDown;
 	public GameObject Player;
 	public static int Anger3;
 	public AudioSource shush;
@@ -39,16 +41,17 @@ public class CrowdAnnoy3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+        coolDown -= Time.deltaTime;
+        AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
 		int N2 = AudioOnoff.times;// the timer count
 
-		if (Input.GetKeyDown ("a")) {
+		if (Input.GetKeyDown ("a") && coolDown <= 0f) {
 			if (Anger3 == N2) {
-				//set color change
-				
+                //set color change
+                N3 = Anger3;
+                coolDown = 10f;
 
-				Renderer rend = GetComponent<Renderer> ();
+                Renderer rend = GetComponent<Renderer> ();
 				rend.material.shader = Shader.Find ("Specular");
 				rend.material.SetColor ("_Color", Color.red);
 
@@ -76,9 +79,13 @@ public class CrowdAnnoy3 : MonoBehaviour {
 
 			transform.Rotate (0,85,0);
 			
-
 		}
 
-		}
+        if (coolDown <= 0f)
+        {
+            N3 = 0;
+        }
+
+    }
 		}
 

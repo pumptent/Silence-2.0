@@ -7,6 +7,10 @@ public class CrowdAnnoy1 : MonoBehaviour {
 	//public Renderer rend;
 	//public Renderer rend2;
 	private int N1;
+
+    public static float N3;
+    private float coolDown; 
+
 	public GameObject Player;
 	public static int Anger1;
 	public AudioSource shush;
@@ -33,12 +37,15 @@ public class CrowdAnnoy1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
+        coolDown -= Time.deltaTime;
+        AudioSource sound = Player.GetComponent<AudioOnoff> ().sound;
 
-		if (Input.GetKeyDown ("a")) {
+		if (Input.GetKeyDown ("a") && coolDown <= 0f) {
 			int N2 = AudioOnoff.times;// the timer count
 			if (Anger1 == N2) {
-				//set color change
+                //set color change
+                N3 = Anger1;
+                coolDown = 10f;
 				
 
 				Renderer rend = GetComponent<Renderer> ();
@@ -60,6 +67,11 @@ public class CrowdAnnoy1 : MonoBehaviour {
 			}
 		}
 
-		}
+        if (coolDown <= 0f)
+        {
+            N3 = 0;
+        }
+
+    }
 		}
 
